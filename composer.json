@@ -14,7 +14,7 @@
     },
     "autoload": {
         "classmap": [
-            "src/migrations"
+            "src/Bluemove/SepaDirectDebits"
         ],
         "psr-0": {
             "Bluemove\\SepaDirectDebits\\": "src/"
