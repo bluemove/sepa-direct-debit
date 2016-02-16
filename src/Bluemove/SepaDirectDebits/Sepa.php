@@ -1,4 +1,4 @@
-<?php namespace Bluemove\SepaDirectDebits;
+<?php namespace Bluemove\Sepa;
 
 /**
  * SEPA SSD (Sepa Direct Debit) 2.1

@@ -1,4 +1,4 @@
-<?php namespace Bluemove\SepaDirectDebits;
+<?php namespace Bluemove\Sepa;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -18,7 +18,7 @@ class SepaDirectDebitsServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('bluemove/sepa-direct-debits');
+		$this->package('bluemove/sepa');
 	}
 
 	/**
@@ -31,7 +31,7 @@ class SepaDirectDebitsServiceProvider extends ServiceProvider {
 		// Register 'underlyingclass' instance container to our UnderlyingClass object
 		$this->app['sepa'] = $this->app->share(function($app)
 		{
-			return new \Bluemove\SepaDirectDebits\Sepa;
+			return new \Bluemove\Sepa\Sepa;
 		});
 
 
@@ -39,7 +39,7 @@ class SepaDirectDebitsServiceProvider extends ServiceProvider {
 		$this->app->booting(function()
 		{
 			$loader = \Illuminate\Foundation\AliasLoader::getInstance();
-			$loader->alias('Sepa', 'Bluemove\SepaDirectDebits\Facades\Sepa');
+			$loader->alias('Sepa', 'Bluemove\Sepa\Facades\Sepa');
 		});
 	}
 
