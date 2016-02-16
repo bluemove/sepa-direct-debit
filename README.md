@@ -4,7 +4,7 @@ Now you need to register the Service Provider in Laravel’s config. Open app/co
 
 'providers' => array(
   // --
-  'Bluemove\SepaDirectPayments\SepaDirectPaymentsServiceProvider',
+  'Bluemove\SepaDirectDebits\SepaDirectDebitsServiceProvider',
 ),
 
 ##1. INSTALLATION
