@@ -4,6 +4,12 @@
   "version": "dev-master",
   "homepage": "https://github.com/bluemove/sepa-direct-debits",
   "license": "MIT",
+  "keywords": [
+    "php",
+    "sepa",
+    "direct debit",
+    "xml"
+  ],
   "authors": [
     {
       "name": "Bluemove",
