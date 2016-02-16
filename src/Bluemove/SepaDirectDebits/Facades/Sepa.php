@@ -1,4 +1,4 @@
-<?php namespace Bluemove\Sepa\Facades;
+<?php namespace Bluemove\SepaDirectDebits\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
