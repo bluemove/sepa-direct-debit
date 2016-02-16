@@ -1,18 +1,23 @@
 {
-  "name": "congressus/sepa-direct-debit",
-  "description": "congressus/sepa-direct-debit",
-  "keywords": [
-    "php",
-    "sepa",
-    "direct debit",
-    "xml"
-  ],
-  "type": "library",
-  "license": "MIT",
-  "require": {
-    "php": ">=5.2"
-  },
-  "autoload": {
-    "classmap": ["/"]
-  }
+    "name": "bluemove/sepa-direct-payments",
+    "description": "",
+    "authors": [
+        {
+            "name": "Bluemove",
+            "email": "andres@bluemove.es"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Bluemove\\SepaDirectPayments\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
 }

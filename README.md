@@ -1,10 +1,12 @@
 #SEPA SDD (Sepa Direct Debit) 2.0
+##Laravel setup
+Now you need to register the Service Provider in Laravel’s config. Open app/config/app.php and add your ServiceProvider to the bottom of the array:
 
-<table>
-<tr><td>Author:</td><td>Congressus, The Netherlands</td></tr> 
-<tr><td>Date:</td><td>10-01-2016</td></tr> 
-<tr><td>Description</td><td>A PHP class to create Sepa Direct Debit XML Files</td></tr> 
-</table>
+'providers' => array(
+  // --
+  'Bluemove\SepaDirectPayments\SepaDirectPaymentsServiceProvider',
+),
+
 ##1. INSTALLATION
 
 SEPA SDD requires PHP 5, no other libraries are required.
