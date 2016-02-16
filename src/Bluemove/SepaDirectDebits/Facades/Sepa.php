@@ -1,8 +1,8 @@
-<?php namespace Bluemove\SepaDirectPayments\Facades;
+<?php namespace Bluemove\SepaDirectDebits\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Supyo extends Facade {
+class Sepa extends Facade {
 
     /**
      * Get the registered name of the component.

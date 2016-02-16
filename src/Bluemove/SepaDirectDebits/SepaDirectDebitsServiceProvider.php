@@ -1,8 +1,8 @@
-<?php namespace Bluemove\SepaDirectPayments;
+<?php namespace Bluemove\SepaDirectDebits;
 
 use Illuminate\Support\ServiceProvider;
 
-class SepaDirectPaymentsServiceProvider extends ServiceProvider {
+class SepaDirectDebitsServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -18,7 +18,7 @@ class SepaDirectPaymentsServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('bluemove/sepa-direct-payments');
+		$this->package('bluemove/sepa-direct-debits');
 	}
 
 	/**
@@ -31,7 +31,7 @@ class SepaDirectPaymentsServiceProvider extends ServiceProvider {
 		$this->app->booting(function()
 		{
 			$loader = \Illuminate\Foundation\AliasLoader::getInstance();
-			$loader->alias('Sepa', 'Bluemove\SepaDirectPayments\Facades\Sepa');
+			$loader->alias('Sepa', 'Bluemove\SepaDirectDebits\Facades\Sepa');
 		});
 	}
 

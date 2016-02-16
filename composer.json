@@ -1,5 +1,5 @@
 {
-    "name": "bluemove/sepa-direct-payments",
+    "name": "bluemove/sepa-direct-debits",
     "description": "",
     "authors": [
         {
@@ -16,7 +16,7 @@
             "src/migrations"
         ],
         "psr-0": {
-            "Bluemove\\SepaDirectPayments\\": "src/"
+            "Bluemove\\SepaDirectDebits\\": "src/"
         }
     },
     "minimum-stability": "stable"
