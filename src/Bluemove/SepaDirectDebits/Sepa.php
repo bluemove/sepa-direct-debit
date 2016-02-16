@@ -8,7 +8,7 @@
  * Class SEPASDD
  * @package Bluemove\SepaDirectDebits
  */
-class SEPASDD {
+class Sepa {
 
     /**
      * @var
