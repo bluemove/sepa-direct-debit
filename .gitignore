@@ -2,3 +2,6 @@
 composer.phar
 composer.lock
 .DS_Store
+.idea/composerJson.xml
+.idea/sepa-direct-debit.iml
+.idea/lessc/lessc.xml

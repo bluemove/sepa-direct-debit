@@ -28,7 +28,11 @@ class SepaDirectPaymentsServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		$this->app->booting(function()
+		{
+			$loader = \Illuminate\Foundation\AliasLoader::getInstance();
+			$loader->alias('Sepa', 'Bluemove\SepaDirectPayments\Facades\Sepa');
+		});
 	}
 
 	/**
