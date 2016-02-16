@@ -1,6 +1,7 @@
 {
     "name": "bluemove/sepa-direct-debits",
-    "description": "",
+    "description": "Create SEPA XML direct debit XML files",
+    "version": "dev-master",
     "authors": [
         {
             "name": "Bluemove",
