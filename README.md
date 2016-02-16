@@ -1,4 +1,9 @@
 #SEPA SDD (Sepa Direct Debit) 2.0
+
+Laravel implementation of https://github.com/congressus/sepa-direct-debit package
+
+Many thanks!
+
 ##Laravel setup
 Now you need to register the Service Provider in Laravel’s config. Open app/config/app.php and add your ServiceProvider to the bottom of the array:
 

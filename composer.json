@@ -1,25 +1,24 @@
 {
-    "name": "bluemove/sepa-direct-debits",
-    "description": "Create SEPA XML direct debit XML files",
-    "version": "dev-master",
+  "name": "bluemove/sepa-direct-debits",
+  "description": "Create SEPA XML direct debit XML files",
+  "version": "dev-master",
   "homepage": "https://github.com/bluemove/sepa-direct-debits",
-    "authors": [
-        {
-            "name": "Bluemove",
-            "email": "andres@bluemove.es"
-        }
-    ],
-    "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "4.2.*"
-    },
-    "autoload": {
-        "classmap": [
-            "src/Bluemove/SepaDirectDebits"
-        ],
-        "psr-0": {
-            "Bluemove\\SepaDirectDebits\\": "src/"
-        }
-    },
-    "minimum-stability": "stable"
+  "authors": [
+    {
+      "name": "Bluemove",
+      "email": "andres@bluemove.es",
+      "homepage": "http://bluemove.es"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "4.2.*"
+  },
+  "autoload": {
+
+    "psr-0": {
+      "Bluemove\\SepaDirectDebits\\": "src/"
+    }
+  },
+  "minimum-stability": "stable"
 }
