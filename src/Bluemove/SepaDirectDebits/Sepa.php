@@ -4,12 +4,29 @@
  * SEPA SSD (Sepa Direct Debit) 2.1
  * This class creates a Sepa Direct Debit XML File.
  */
+/**
+ * Class SEPASDD
+ * @package Bluemove\SepaDirectDebits
+ */
 class SEPASDD {
 
+    /**
+     * @var
+     */
     private $config;
+    /**
+     * @var
+     */
     private $XML;
+    /**
+     * @var array
+     */
     private $batchArray = array();
 
+    /**
+     * @param $config
+     * @throws Exception
+     */
     function __construct($config){
         //Check the config
         $config_validator = $this->validateConfig($config);
@@ -914,10 +931,16 @@ class SEPASDD {
         return $this->batchArray[$type."::".$date];
     }//getBatch
 
+    /**
+     * @return bool
+     */
     public function isEmpty() {
         return empty($this->batchArray);
     }
 
+    /**
+     * @return array
+     */
     public function getDirectDebitInfo(){
         $info = array();
         $info['MessageId'] = $this->xml->getElementsByTagName("MsgId")->item(0)->nodeValue;
