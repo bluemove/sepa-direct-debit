@@ -7,13 +7,19 @@ Many thanks!
 ##Laravel setup
 Now you need to register the Service Provider in Laravel’s config. Open app/config/app.php and add your ServiceProvider to the bottom of the array:
 
-Add in providers section:
+1. Add in providers section:
 
   'Bluemove\SepaDirectDebits\SepaDirectDebitsServiceProvider',
   
-Add in aliases section for facadse:
+2. Add in aliases section for facadse:
   
   'Sepa' => 'Bluemove\SepaDirectDebits\Facades\Sepa',
+
+3. Publish config
+    
+    php artisan config:publish bluemove/sepa-direct-debits
+    
+4. Customize package published config settings
 
 
 ##1. INSTALLATION
