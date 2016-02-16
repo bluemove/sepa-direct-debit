@@ -22,7 +22,9 @@
     "illuminate/support": "4.2.*"
   },
   "autoload": {
-
+    "classmap": [
+    "/"
+  ],
     "psr-0": {
       "Bluemove\\SepaDirectDebits\\": "src/"
     }
