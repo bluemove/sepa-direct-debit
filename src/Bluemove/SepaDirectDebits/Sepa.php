@@ -14,6 +14,7 @@ class Sepa {
      * @var
      */
     private $config;
+    $config = Config::get('sepa-direct-debits::sepa_settings');
     /**
      * @var
      */

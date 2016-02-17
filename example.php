@@ -1,5 +1,5 @@
 <?php
-require_once("SEPASDD.php");
+require_once("/src/Bluemove/SepaDirectDebits/Sepa.php");
 $config = array("name" => "Test",
                 "IBAN" => "NL41BANK1234567890",
                 //"BIC" => "BANKNL2A", <- Optional, banks may disallow BIC in future
@@ -21,7 +21,7 @@ $payment = array("name" => "Test von Testenstein",
                 );      
 
 try{
-    $SEPASDD = new SEPASDD($config);
+    $SEPASDD = new Sepa($config);
     $SEPASDD->addPayment($payment);
     $xml = $SEPASDD->save();
     
