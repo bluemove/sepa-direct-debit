@@ -1,8 +1,8 @@
 {
-  "name": "bluemove/sepa-direct-debits",
+  "name": "bluemove/sepadirectdebits",
   "description": "Create SEPA XML direct debit XML files",
   "version": "dev-master",
-  "homepage": "https://github.com/bluemove/sepa-direct-debits",
+  "homepage": "https://github.com/bluemove/sepadirectdebits",
   "license": "MIT",
   "keywords": [
     "php",

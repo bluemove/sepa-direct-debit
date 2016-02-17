@@ -18,7 +18,7 @@ class SepaDirectDebitsServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('bluemove/sepa');
+		$this->package('bluemove/sepadirectdebits');
 	}
 
 	/**
@@ -33,8 +33,6 @@ class SepaDirectDebitsServiceProvider extends ServiceProvider {
 		{
 			return new \Bluemove\SepaDirectDebits\Sepa;
 		});
-
-
 
 		$this->app->booting(function()
 		{
