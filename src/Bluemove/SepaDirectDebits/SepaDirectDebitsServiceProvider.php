@@ -30,7 +30,7 @@ class SepaDirectDebitsServiceProvider extends ServiceProvider {
 	{
         $this->app->booting(function () {
             $loader = AliasLoader::getInstance();
-            $loader->alias('Gmaps', 'Bluemove\SepaDirectDebits\Facades\Sepa');
+            $loader->alias('Sepa', 'Bluemove\SepaDirectDebits\Facades\Sepa');
         });
         $this->app['sepa'] = $this->app->share(function ($app) {
             return new Sepa();
