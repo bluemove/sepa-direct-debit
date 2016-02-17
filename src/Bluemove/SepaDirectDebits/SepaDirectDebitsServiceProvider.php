@@ -28,17 +28,13 @@ class SepaDirectDebitsServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		// Register 'underlyingclass' instance container to our UnderlyingClass object
-		$this->app['sepa'] = $this->app->share(function($app)
-		{
-			return new \Bluemove\SepaDirectDebits\Sepa;
-		});
-
-		$this->app->booting(function()
-		{
-			$loader = \Illuminate\Foundation\AliasLoader::getInstance();
-			$loader->alias('Sepa', 'Bluemove\SepaDirectDebits\Facades\Sepa');
-		});
+        $this->app->booting(function () {
+            $loader = AliasLoader::getInstance();
+            $loader->alias('Gmaps', 'Bluemove\SepaDirectDebits\Facades\Sepa');
+        });
+        $this->app['sepa'] = $this->app->share(function ($app) {
+            return new Sepa();
+        });
 	}
 
 	/**
