@@ -14,7 +14,7 @@ class Sepa {
      * @var
      */
     private $config;
-   
+
     /**
      * @var
      */
