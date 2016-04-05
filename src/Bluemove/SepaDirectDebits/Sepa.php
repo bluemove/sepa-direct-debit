@@ -14,7 +14,7 @@ class Sepa {
      * @var
      */
     private $config;
-
+   
     /**
      * @var
      */
@@ -46,7 +46,7 @@ class Sepa {
      */
     private function prepareDocument(){
         //Create the XML Instance
-        $this->xml = new DOMDocument("1.0","UTF-8");
+        $this->xml = new \DOMDocument("1.0","UTF-8");
 
         //Set formatting options
         $this->xml->preserveWhiteSpace = false;
@@ -128,7 +128,7 @@ class Sepa {
         //First validate the payment array
         $validationResult = $this->validatePayment($payment);
         if($validationResult !== true){
-            throw new Exception("Invalid Payment, error with: ".$validationResult);
+            throw new \Exception("Invalid Payment, error with: ".$validationResult);
         }
 
         //Get the CstmrDrctDbtInitnNode
@@ -381,7 +381,7 @@ class Sepa {
      * @param $xml The xml, as a string, to validate agianst the schema.
      */
     public function validate($xml){
-        $domdoc = new DOMDocument();
+        $domdoc = new \DOMDocument();
         $domdoc->loadXML($xml);
         if ( isset($this->config['version']) && $this->config['version'] == "3") {
             return $domdoc->schemaValidate("pain.008.001.03.xsd");
@@ -399,10 +399,10 @@ class Sepa {
      * @param $attr Key => Value array defining the attributes (Optional, default none)
      */
     public function addCustomNode($parent_XPATH, $name, $value = "", $attr = array() ){
-        $xpath = new DOMXPath($this->xml);
+        $xpath = new \DOMXPath($this->xml);
         $parent = $xpath->query($parent_XPATH);
         if ( $parent == false || $parent->length == 0 ) {
-            throw new Exception("Invalid XPATH expression, or no results found: ".$parent_XPATH);
+            throw new \Exception("Invalid XPATH expression, or no results found: ".$parent_XPATH);
         }
         $newnode = $this->xml->createElement($name);
         if ( $value != "" ) {
@@ -437,7 +437,7 @@ class Sepa {
             $trxAmountArray[] = $amount->nodeValue;
         }
         $trxAmount = $this->calcTotalAmount($trxAmountArray);
-        $xpath = new DOMXPath($this->xml);
+        $xpath = new \DOMXPath($this->xml);
         $NbOfTxs_XPATH = "//Document/CstmrDrctDbtInitn/GrpHdr/NbOfTxs";
         $CtrlSum_XPATH = "//Document/CstmrDrctDbtInitn/GrpHdr/CtrlSum";
         $NbOfTxsNode = $xpath->query($NbOfTxs_XPATH)->item(0);
@@ -648,7 +648,7 @@ class Sepa {
      * @return True if valid, error string if invalid.
      */
     public static function validateDate($date){
-        $result = DateTime::createFromFormat("Y-m-d",$date);
+        $result = \DateTime::createFromFormat("Y-m-d",$date);
 
         if($result === false){
             return $date." is not a valid ISO Date";
@@ -663,7 +663,7 @@ class Sepa {
      * @return True if valid, error string if invalid.
      */
     public static function validateMandateDate($date){
-        $result = DateTime::createFromFormat("Y-m-d",$date);
+        $result = \DateTime::createFromFormat("Y-m-d",$date);
 
         if($result === false){
             return $date." is not a valid ISO Date";
@@ -956,7 +956,7 @@ class Sepa {
                 $date = $batchKey[1];
                 $batchInfo['CollectionDate'] = $date;
 
-                $dateObject = DateTime::createFromFormat("Y-m-d",$date);
+                $dateObject = \DateTime::createFromFormat("Y-m-d",$date);
                 if($info['FirstCollectionDate'] == NULL || $dateObject > $info['FirstCollectionDate']){
                     $info['FirstCollectionDate'] = $dateObject;
                 }
@@ -986,7 +986,7 @@ class Sepa {
             $dates = $this->xml->getElementsByTagName("ReqdColltnDt");
             $datesCount = $dates->length;
             for($idx=0; $idx<$datesCount; $idx++){
-                $dateObject = DateTime::createFromFormat("Y-m-d",$dates->item($idx)->nodeValue);
+                $dateObject = \DateTime::createFromFormat("Y-m-d",$dates->item($idx)->nodeValue);
                 if($info['FirstCollectionDate'] == NULL || $dateObject > $info['FirstCollectionDate']){
                     $info['FirstCollectionDate'] = $dateObject;
                 }
